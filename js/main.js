@@ -95,14 +95,14 @@ function draw() {
     let x = dot.x;
     let y = dot.y;
     let size = 1;
-    let color = "rgba(232, 230, 225, 0.18)";
+    let color = "rgba(20, 22, 27, 0.12)";
 
     if (distance < radius && distance > 0) {
       const strength = 1 - distance / radius;
       x += (dx / distance) * strength * 12;
       y += (dy / distance) * strength * 12;
       size = 1 + strength * 1.5;
-      color = `rgba(249, 115, 22, ${0.3 + strength * 0.7})`;
+      color = `rgba(47, 91, 234, ${0.3 + strength * 0.7})`;
     }
 
     ctx.beginPath();

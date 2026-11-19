@@ -1,21 +1,23 @@
 /* ========== COLOURS & FONTS ========== */
 
 :root {
-  --bg: #0F172A;
-  --text: #E8E6E1;
-  --accent: #F97316;
+  --bg: #F3F4F1;
+  --band: #E7E8E3;
+  --text: #14161B;
+  --muted: #5B606B;
+  --accent: #2F5BEA;
+  --accent-tint: #E3E8FB;
+  --accent-light: #7E9BFF;
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
-  --text-muted: rgba(232, 230, 225, 0.72);
-}
 
 
 /* ========== BASICS ========== */
 
 body {
   background-color: var(--bg);
-  color: var(--text-muted);
+  color: var(--muted);
   font-family: var(--font-body);
   line-height: 1.6;
 }
@@ -72,7 +74,7 @@ h2 {
   content: "";
   width: 60px;
   height: 1px;
-  background-color: rgba(232, 230, 225, 0.2);
+  background-color: rgba(20, 22, 225, 0.2);
 }
 
 section h2 {
@@ -102,7 +104,7 @@ article {
   right: 0;
   bottom: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.6), transparent);
+  background: linear-gradient(to right, transparent, rgba(47, 91, 234, 0.6), transparent);
 }
 
 .dot-canvas {
@@ -186,7 +188,7 @@ header {
   top: 0;
   z-index: 10;
   background-color: var(--bg);
-  border-bottom: 1px solid rgba(232, 230, 225, 0.1);
+  border-bottom: 1px solid rgba(20, 22, 27, 0.1);
 }
 
 nav {
@@ -271,8 +273,8 @@ html {
 }
 
 .project-grid article {
-  background-color: rgba(232, 230, 225, 0.04);
-  border: 1px solid rgba(232, 230, 225, 0.1);
+  background-color: rgba(20, 22, 27, 0.04);
+  border: 1px solid rgba(20, 22, 27, 0.1);
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 0;
@@ -361,7 +363,7 @@ html {
   content: "";
   width: 60px;
   height: 1px;
-  background-color: rgba(232, 230, 225, 0.2);
+  background-color: rgba(20, 22, 27 , 0.2);
 }
 
 #contact p {
