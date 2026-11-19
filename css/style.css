@@ -209,6 +209,10 @@ article {
   background-color: var(--accent);
   color: var(--bg);
 }
+#contact .btn:not(.btn-primary) {
+  color: var(--bg);
+  border-color: rgba(243, 244, 241, 0.35);
+}
 
 
 /* ========== NAVBAR ========== */
@@ -217,8 +221,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--bg);
-  border-bottom: 1px solid rgba(20, 22, 27, 0.1);
+  background-color: var(--text);
+  border-bottom: 1px solid rgba(234, 244, 241, 0.1);
 }
 
 nav {
@@ -234,7 +238,7 @@ nav {
 .logo {
   font-family: var(--font-heading);
   font-weight: 500;
-  color: var(--text);
+  color: var(--bg);
   text-decoration: none;
 }
 
@@ -263,14 +267,14 @@ nav ul {
 }
 
 nav ul a {
-  color: var(--text);
+  color: var(--bg);
   text-decoration: none;
   font-size: 0.95rem;
   position: relative;
 }
 
 nav ul a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 nav ul a::after {
@@ -280,7 +284,7 @@ nav ul a::after {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s;
@@ -383,6 +387,22 @@ html {
 
 #contact {
   text-align: center;
+  background-color: var(--text);
+}
+#contact h2 {
+  color: var(--bg);
+}
+
+#contact p {
+  color: rgba(243, 244, 241, 0.7);
+}
+
+#contact .section-label,
+#contact .highlight {
+  color: var(--accent-light);
+}
+#contact a:not(.btn) {
+  color: var(--bg);
 }
 
 #contact .section-label {
@@ -411,9 +431,16 @@ html {
 
 /* ========== BIGGER SCREENS (700px AND UP) ========== */
 @media (min-width: 700px) {
-  .menu-toggle {
-    display: none;
-  }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(243, 244, 241, 0.3);
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
 
   nav ul {
     display: flex;
@@ -506,14 +533,29 @@ html {
 /* ========== FOOTER ========== */
 
 footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  border-top: 1px solid rgba(232, 230, 225, 0.1);
+  background-color: var(--text);
+  color: rgba(243, 244, 241, 0.6);
   font-size: 0.85rem;
+  padding-bottom: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(243, 244, 241, 0.15);
 }
 
 footer p {
   margin-bottom: 0;
+}
+
+.footer-links a {
+  color: var(--bg);
+  text-decoration: none;
+  margin-left: 1.5rem;
 }
 
 
