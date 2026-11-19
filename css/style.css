@@ -99,6 +99,10 @@ section h2 {
 h1 em,h2 em {
   display: block;
 }
+h2 em {
+  font-size: 0.6em;
+  margin-top: 0.4rem;
+}
 
 p {
   margin-bottom: 1rem;
@@ -406,18 +410,9 @@ html {
 
 
 /* ========== BIGGER SCREENS (700px AND UP) ========== */
-
 @media (min-width: 700px) {
   .menu-toggle {
     display: none;
-
-    section {
-    padding: 5rem 1.5rem;
-  }
-
-    section h2 {
-    font-size: 2.5rem;
-  }
   }
 
   nav ul {
@@ -426,16 +421,40 @@ html {
     width: auto;
     padding-top: 0;
   }
-}
 
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  #hero h1 {
+    font-size: 5rem;
+  }
+
+  section h2 {
+    font-size: 3.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
 
 /* ========== TAGS (PILL STYLE) ========== */
 
 .project-grid li,
 #skills li {
   font-size: 0.8rem;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid rgba(232, 230, 225, 0.2);
+  padding: 0.3rem 0.85rem;
+  background-color: var(--bg);
+  border: 1px solid rgba(20, 22, 27, 0.14);
   border-radius: 999px;
 }
 
