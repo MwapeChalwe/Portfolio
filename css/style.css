@@ -1,21 +1,24 @@
 /* ========== COLOURS & FONTS ========== */
 
 :root {
-  --bg: #0F172A;
-  --text: #E8E6E1;
-  --accent: #F97316;
+  --bg: #F3F4F1;
+  --band: #E7E8E3;
+  --text: #14161B;
+  --muted: #5B606B;
+  --accent: #2F5BEA;
+  --accent-tint: #E3E8FB;
+  --accent-light: #7E9BFF;
+  --content-width: 1200px;
 
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --text-muted: rgba(232, 230, 225, 0.72);
+  --font-heading: "Instrument Serif", serif;
+  --font-body: "DM Sans", sans-serif;
 }
-
 
 /* ========== BASICS ========== */
 
 body {
   background-color: var(--bg);
-  color: var(--text-muted);
+  color: var(--muted);
   font-family: var(--font-body);
   line-height: 1.6;
 }
@@ -23,6 +26,8 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--text);
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 a {
@@ -47,13 +52,25 @@ button:focus-visible {
 /* ========== SPACING & SECTION HEADINGS ========== */
 
 section {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 h2 {
   margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+#projects,
+#skills {
+  background-color: var(--band);
 }
 
 .section-label {
@@ -72,11 +89,19 @@ h2 {
   content: "";
   width: 60px;
   height: 1px;
-  background-color: rgba(232, 230, 225, 0.2);
+  background-color: rgba(20, 22, 225, 0.2);
 }
 
 section h2 {
   font-size: 2.25rem;
+}
+
+h1 em,h2 em {
+  display: block;
+}
+h2 em {
+  font-size: 0.6em;
+  margin-top: 0.4rem;
 }
 
 p {
@@ -102,7 +127,7 @@ article {
   right: 0;
   bottom: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.6), transparent);
+  background: linear-gradient(to right, transparent, rgba(47, 91, 234, 0.6), transparent);
 }
 
 .dot-canvas {
@@ -128,8 +153,12 @@ article {
 }
 
 .hero-intro {
-  color: var(--accent);
+  color: var(--muted);
   font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .rotating-word {
@@ -145,9 +174,12 @@ article {
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 1rem;
+}
+#hero h1 em {
+  font-size: 0.65em;
 }
 
 
@@ -161,9 +193,9 @@ article {
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.6rem;
   border: 2px solid var(--accent);
-  border-radius: 6px;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 500;
   transition: transform 0.2s;
@@ -177,6 +209,10 @@ article {
   background-color: var(--accent);
   color: var(--bg);
 }
+#contact .btn:not(.btn-primary) {
+  color: var(--bg);
+  border-color: rgba(243, 244, 241, 0.35);
+}
 
 
 /* ========== NAVBAR ========== */
@@ -185,14 +221,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--bg);
-  border-bottom: 1px solid rgba(232, 230, 225, 0.1);
+  background-color: var(--text);
+  border-bottom: 1px solid rgba(234, 244, 241, 0.1);
 }
 
 nav {
-  max-width: 800px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -201,8 +237,8 @@ nav {
 
 .logo {
   font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--bg);
   text-decoration: none;
 }
 
@@ -231,14 +267,14 @@ nav ul {
 }
 
 nav ul a {
-  color: var(--text);
+  color: var(--bg);
   text-decoration: none;
   font-size: 0.95rem;
   position: relative;
 }
 
 nav ul a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
 }
 
 nav ul a::after {
@@ -248,7 +284,7 @@ nav ul a::after {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s;
@@ -271,8 +307,8 @@ html {
 }
 
 .project-grid article {
-  background-color: rgba(232, 230, 225, 0.04);
-  border: 1px solid rgba(232, 230, 225, 0.1);
+  background-color: rgba(20, 22, 27, 0.04);
+  border: 1px solid rgba(20, 22, 27, 0.1);
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 0;
@@ -351,6 +387,22 @@ html {
 
 #contact {
   text-align: center;
+  background-color: var(--text);
+}
+#contact h2 {
+  color: var(--bg);
+}
+
+#contact p {
+  color: rgba(243, 244, 241, 0.7);
+}
+
+#contact .section-label,
+#contact .highlight {
+  color: var(--accent-light);
+}
+#contact a:not(.btn) {
+  color: var(--bg);
 }
 
 #contact .section-label {
@@ -361,7 +413,7 @@ html {
   content: "";
   width: 60px;
   height: 1px;
-  background-color: rgba(232, 230, 225, 0.2);
+  background-color: rgba(20, 22, 27 , 0.2);
 }
 
 #contact p {
@@ -378,19 +430,17 @@ html {
 
 
 /* ========== BIGGER SCREENS (700px AND UP) ========== */
-
 @media (min-width: 700px) {
-  .menu-toggle {
-    display: none;
-
-    section {
-    padding: 5rem 1.5rem;
-  }
-
-    section h2 {
-    font-size: 3rem;
-  }
-  }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(243, 244, 241, 0.3);
+  border-radius: 6px;
+  color: var(--bg);
+  font-size: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
 
   nav ul {
     display: flex;
@@ -398,16 +448,40 @@ html {
     width: auto;
     padding-top: 0;
   }
-}
 
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  #hero h1 {
+    font-size: 5rem;
+  }
+
+  section h2 {
+    font-size: 3.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
 
 /* ========== TAGS (PILL STYLE) ========== */
 
 .project-grid li,
 #skills li {
   font-size: 0.8rem;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid rgba(232, 230, 225, 0.2);
+  padding: 0.3rem 0.85rem;
+  background-color: var(--bg);
+  border: 1px solid rgba(20, 22, 27, 0.14);
   border-radius: 999px;
 }
 
@@ -459,14 +533,29 @@ html {
 /* ========== FOOTER ========== */
 
 footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  border-top: 1px solid rgba(232, 230, 225, 0.1);
+  background-color: var(--text);
+  color: rgba(243, 244, 241, 0.6);
   font-size: 0.85rem;
+  padding-bottom: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(243, 244, 241, 0.15);
 }
 
 footer p {
   margin-bottom: 0;
+}
+
+.footer-links a {
+  color: var(--bg);
+  text-decoration: none;
+  margin-left: 1.5rem;
 }
 
 

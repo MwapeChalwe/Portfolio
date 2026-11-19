@@ -27,7 +27,10 @@ window.addEventListener("scroll", () => {
 
 /* ========== ROTATING WORDS ========== */
 
-const words = ["networks in Packet Tracer", "tools in Java", "apps with Node.js", "websites like this one"];
+const words = [  "networks that stay connected.",
+  "tools that save time.",
+  "apps people enjoy using.",
+  "websites like this one."];
 let index = 0;
 const rotatingWord = document.querySelector(".rotating-word");
 
@@ -71,6 +74,7 @@ const spacing = 24;
 const radius = 100;
 let dots = [];
 let mouse = { x: -1000, y: -1000 };
+let smooth = { x: -1000, y: -1000 };
 
 function setup() {
   canvas.width = heroBg.offsetWidth;
@@ -86,23 +90,38 @@ function setup() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (mouse.x > -500) {
+    if (smooth.x < -500) {
+      smooth.x = mouse.x;
+      smooth.y = mouse.y;
+    }
+    smooth.x += (mouse.x - smooth.x) * 0.2;
+    smooth.y += (mouse.y - smooth.y) * 0.2;
+  } else {
+    smooth.x = -1000;
+    smooth.y = -1000;
+  }
 
   dots.forEach((dot) => {
-    const dx = dot.x - mouse.x;
-    const dy = dot.y - mouse.y;
+    const dx = dot.x - smooth.x;
+    const dy = dot.y - smooth.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
     let x = dot.x;
     let y = dot.y;
     let size = 1;
-    let color = "rgba(232, 230, 225, 0.18)";
+    let color = "rgba(20, 22, 27, 0.12)";
 
     if (distance < radius && distance > 0) {
       const strength = 1 - distance / radius;
-      x += (dx / distance) * strength * 12;
-      y += (dy / distance) * strength * 12;
+      ctx.beginPath();
+      ctx.moveTo(smooth.x, smooth.y);
+      ctx.lineTo(dot.x, dot.y);
+      ctx.strokeStyle = `rgba(47, 91, 234, ${strength * 0.45})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
       size = 1 + strength * 1.5;
-      color = `rgba(249, 115, 22, ${0.3 + strength * 0.7})`;
+      color = `rgba(47, 91, 234, ${0.3 + strength * 0.7})`;
     }
 
     ctx.beginPath();
@@ -110,6 +129,12 @@ function draw() {
     ctx.fillStyle = color;
     ctx.fill();
   });
+    if (smooth.x > -500) {
+    ctx.beginPath();
+    ctx.arc(smooth.x, smooth.y, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "#2F5BEA";
+    ctx.fill();
+  }
 
   requestAnimationFrame(draw);
 }
