@@ -8,10 +8,11 @@
   --accent: #2F5BEA;
   --accent-tint: #E3E8FB;
   --accent-light: #7E9BFF;
+  --content-width: 1200px;
 
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
-
+}
 
 /* ========== BASICS ========== */
 
@@ -49,13 +50,24 @@ button:focus-visible {
 /* ========== SPACING & SECTION HEADINGS ========== */
 
 section {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 3rem 1.5rem;
 }
 
 h2 {
   margin-bottom: 1.5rem;
+}
+
+.container {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#projects,
+#skills {
+  background-color: var(--band);
 }
 
 .section-label {
@@ -192,9 +204,9 @@ header {
 }
 
 nav {
-  max-width: 800px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
