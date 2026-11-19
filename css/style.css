@@ -10,8 +10,8 @@
   --accent-light: #7E9BFF;
   --content-width: 1200px;
 
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: "Instrument Serif", serif;
+  --font-body: "DM Sans", sans-serif;
 }
 
 /* ========== BASICS ========== */
@@ -26,6 +26,8 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--text);
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 a {
@@ -91,6 +93,10 @@ h2 {
 
 section h2 {
   font-size: 2.25rem;
+}
+
+h2 em {
+  display: block;
 }
 
 p {
@@ -159,7 +165,7 @@ article {
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 1rem;
 }
@@ -215,7 +221,7 @@ nav {
 
 .logo {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text);
   text-decoration: none;
 }
@@ -402,7 +408,7 @@ html {
   }
 
     section h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   }
 
